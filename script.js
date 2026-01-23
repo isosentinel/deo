@@ -14,8 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
   // INSTALL BANNER FOR PWA
   // =========================
-  document.addEventListener("DOMContentLoaded", () => {
-
   let deferredPrompt;
   const installBanner = document.getElementById('installBanner');
   const installBtn = document.getElementById('installBtn');
@@ -45,9 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-});
-
 
   // =========================
   // PAGE TRANSITION
