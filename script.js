@@ -14,11 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
   // INSTALL BANNER FOR PWA
   // =========================
+  document.addEventListener("DOMContentLoaded", () => {
+
   let deferredPrompt;
   const installBanner = document.getElementById('installBanner');
   const installBtn = document.getElementById('installBtn');
   const installText = document.getElementById('installText');
 
+  // Detect iOS
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
   if (isIOS) {
@@ -42,6 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+});
+
 
   // =========================
   // PAGE TRANSITION
