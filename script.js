@@ -17,22 +17,31 @@ document.addEventListener("DOMContentLoaded", () => {
   let deferredPrompt;
   const installBanner = document.getElementById('installBanner');
   const installBtn = document.getElementById('installBtn');
+  const installText = document.getElementById('installText');
 
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+  if (isIOS) {
+    installText.innerText = 'To install ISO Sentinel on iOS: Tap Share (⬆) → Add to Home Screen';
+    installBtn.style.display = 'none';
     installBanner.style.display = 'block';
-  });
+  } else {
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installBanner.style.display = 'block';
+    });
 
-  installBtn.addEventListener('click', async () => {
-    installBanner.style.display = 'none';
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      const choiceResult = await deferredPrompt.userChoice;
-      deferredPrompt = null;
-      console.log(choiceResult.outcome);
-    }
-  });
+    installBtn.addEventListener('click', async () => {
+      installBanner.style.display = 'none';
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const choiceResult = await deferredPrompt.userChoice;
+        deferredPrompt = null;
+        console.log('User choice:', choiceResult.outcome);
+      }
+    });
+  }
 
   // =========================
   // PAGE TRANSITION
@@ -61,21 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const expBody = document.getElementById("exp-body");
   const searchInput = document.getElementById("search");
 
-  document.querySelectorAll(".explore-btn button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const title = btn.parentElement.dataset.title;
-      expTitle.innerText = title;
-      renderItems(contentDB[title] || []);
-      explorer.style.display = "flex";
-      searchInput.value = "";
-    });
-  });
-
-  document.querySelector(".close").addEventListener("click", () => explorer.style.display = "none");
-
-  // =========================
-  // CONTENT DATABASE
-  // =========================
   const contentDB = {
     "Introduction to Cyber Security":[
       {type:"pdf",title:"Cyber Notes",src:"docs/cyber.pdf"},
@@ -134,6 +128,21 @@ document.addEventListener("DOMContentLoaded", () => {
       {type:"video", title:"Professional Technical Documentation", src:"https://www.youtube.com/embed/so9jX3hf9dQ"}
     ]
   };
+
+  // =========================
+  // EXPLORER BUTTONS
+  // =========================
+  document.querySelectorAll(".explore-btn button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const title = btn.parentElement.dataset.title;
+      expTitle.innerText = title;
+      renderItems(contentDB[title] || []);
+      explorer.style.display = "flex";
+      searchInput.value = "";
+    });
+  });
+
+  document.querySelector(".close").addEventListener("click", () => explorer.style.display = "none");
 
   // =========================
   // RENDER EXPLORER ITEMS
