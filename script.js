@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const installBtn = document.getElementById('installBtn');
   const installText = document.getElementById('installText');
 
-  // Detect iOS
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
   if (isIOS) {
@@ -51,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", () => transition.classList.add("hide"));
 
   // =========================
-  // SINGLE PAGE NAVIGATION
+  // SINGLE PAGE NAVIGATION (DESKTOP)
   // =========================
   const pages = document.querySelectorAll(".page");
   const navLinks = document.querySelectorAll("header nav a");
@@ -60,6 +59,28 @@ document.addEventListener("DOMContentLoaded", () => {
       const target = link.dataset.section;
       pages.forEach(page => page.classList.toggle("active", page.id === target));
       window.scrollTo({top: 0, behavior: "smooth"});
+    });
+  });
+
+  // =========================
+  // MOBILE NAV BELOW HERO
+  // =========================
+  const hero = document.querySelector(".hero");
+  const mobileNav = document.createElement("div");
+  mobileNav.classList.add("mobile-nav");
+  navLinks.forEach(link => {
+    const a = document.createElement("a");
+    a.innerText = link.innerText;
+    a.dataset.section = link.dataset.section;
+    mobileNav.appendChild(a);
+  });
+  hero.insertAdjacentElement("afterend", mobileNav);
+
+  mobileNav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      const target = link.dataset.section;
+      pages.forEach(page => page.classList.toggle("active", page.id === target));
+      window.scrollTo({top:0, behavior:"smooth"});
     });
   });
 
