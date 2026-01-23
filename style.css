@@ -44,7 +44,6 @@ body{
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
-  padding-top: 70px; /* space for marquee/header */
 }
 
 /* =========================
@@ -74,9 +73,10 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:12px 25px;
+  padding:18px 45px;
   z-index:999;
   border-bottom:1px solid var(--accent-soft);
+  transition:.3s ease;
 }
 
 header .logo-box{
@@ -91,26 +91,20 @@ header .logo-box img{
   object-fit:contain;
 }
 
-header .logo-box h2{
-  font-size:1.5rem;
-}
-
-/* Hide nav links on mobile */
-header nav{
-  display:flex;
-  gap:16px;
+header nav a{
+  margin:0 16px;
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:500;
+  cursor:pointer;
 }
 
 /* =========================
    MARQUEE – BLUE OCEAN
 ========================= */
 .marquee{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 16px 0;
-  z-index: 999; 
+  margin-top:0;
+  padding:16px 0;
   background:
     linear-gradient(
       90deg,
@@ -123,9 +117,8 @@ header nav{
   box-shadow:
     0 0 30px rgba(0,191,255,0.45),
     inset 0 0 25px rgba(0,191,255,0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position:relative;
+  z-index:1000;
 }
 
 /* Cyber ocean grid lines */
@@ -160,57 +153,46 @@ header nav{
    HERO
 ========================= */
 .hero{
-  min-height:100vh;
+  min-height:calc(100vh - 60px);
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
   align-items:center;
   text-align:center;
-  padding-top: 20px;
-}
-
-.hero-music {
-  margin-bottom: 10px; 
+  padding-top:70px;
 }
 
 .hero h1{
   font-size:4rem;
+  margin-top:20px;
   text-shadow:0 0 35px var(--accent);
-  margin-bottom: 8px; 
 }
 
-.hero p{
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
+.hero-music audio{
+  outline:none;
+  border-radius:12px;
+  margin-top:10px;
 }
 
 /* =========================
-   MOBILE NAV UNDER HERO
+   MOBILE NAV BELOW HERO
 ========================= */
 .mobile-nav{
   display:none;
-  margin-bottom: 20px;
-  gap:12px;
   flex-wrap:wrap;
   justify-content:center;
+  gap:12px;
+  margin-top:20px;
 }
 
 .mobile-nav a{
   color:var(--accent);
+  background:var(--bg-card);
+  padding:8px 14px;
+  border-radius:12px;
   text-decoration:none;
   font-weight:500;
   cursor:pointer;
-  background:rgba(0,255,247,0.1);
-  padding:6px 14px;
-  border-radius:12px;
-  transition:0.3s;
-}
-
-.mobile-nav a:hover{
-  background:rgba(0,255,247,0.25);
 }
 
 /* =========================
@@ -366,88 +348,14 @@ footer{
 }
 
 /* =========================
-   INSTALL BANNER STYLES
-========================= */
-.install-banner {
-  display: none;
-  position: fixed;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #00fff7;
-  color: #020210;
-  padding: 15px 20px;
-  border-radius: 12px;
-  text-align: center;
-  z-index: 10000;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  font-family: 'Poppins', sans-serif;
-  opacity: 0;
-  animation: slideUp 0.5s ease-out forwards;
-}
-
-.install-banner button {
-  margin-left: 15px;
-  padding: 8px 20px;
-  border: none;
-  border-radius: 8px;
-  background: #020210;
-  color: #00fff7;
-  cursor: pointer;
-}
-
-/* Slide-in animation */
-@keyframes slideUp {
-  from { transform: translateX(-50%) translateY(100px); opacity:0; }
-  to { transform: translateX(-50%) translateY(0); opacity:1; }
-}
-
-/* =========================
-   RESPONSIVE ADJUSTMENTS
+   RESPONSIVE
 ========================= */
 @media(max-width:768px){
-  body{
-    padding-top: 90px; 
-  }
+  .hero h1{font-size:2.6rem;}
+  header{padding:10px 20px;}
+  body{background-attachment:scroll; background-size:cover;}
 
-  header{
-    padding: 8px 15px;
-  }
-
-  header nav{
-    display:none; /* hide desktop nav */
-  }
-
-  .hero{
-    justify-content:flex-start;
-    padding-top: 15px; 
-    min-height: auto; 
-  }
-
-  .hero-music{
-    width: 90%;
-    margin: 0 auto 10px auto; 
-  }
-
-  .hero h1{
-    font-size:2.6rem;
-    margin-bottom: 6px; 
-  }
-
-  .hero p{
-    font-size:1rem;
-    margin-bottom: 10px; 
-  }
-
-  /* Show mobile nav under hero */
-  .mobile-nav{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    margin-bottom: 20px;
-  }
-
-  .mobile-nav a{
-    font-size:0.9rem;
-  }
+  /* show mobile nav below hero */
+  .mobile-nav{display:flex;}
+  header nav{display:none;}
 }
