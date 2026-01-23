@@ -330,3 +330,39 @@ footer{
   header{padding:15px 20px;}
   body{background-attachment:scroll; background-size:cover;}
 }
+/* =========================
+   INSTALL BANNER STYLES
+========================= */
+.install-banner {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00fff7;
+  color: #020210;
+  padding: 15px 20px;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 10000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  font-family: 'Poppins', sans-serif;
+  opacity: 0;
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.install-banner button {
+  margin-left: 15px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #020210;
+  color: #00fff7;
+  cursor: pointer;
+}
+
+/* Slide-in animation */
+@keyframes slideUp {
+  from { transform: translateX(-50%) translateY(100px); opacity:0; }
+  to { transform: translateX(-50%) translateY(0); opacity:1; }
+}
