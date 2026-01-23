@@ -91,12 +91,17 @@ header .logo-box img{
   object-fit:contain;
 }
 
+header nav{
+  display:flex;
+  gap:16px;
+}
+
 header nav a{
-  margin:0 16px;
   color:var(--accent);
   text-decoration:none;
   font-weight:500;
   cursor:pointer;
+  white-space:nowrap;
 }
 
 /* =========================
@@ -400,5 +405,23 @@ footer{
   .hero p{
     font-size:1rem;
     margin-bottom: 12px; 
+  }
+
+  /* =========================
+     NAVIGATION SCROLL HORIZONTAL
+  ========================== */
+  header nav{
+    overflow-x:auto;
+    gap:12px;
+    padding-bottom: 5px;
+  }
+
+  header nav::-webkit-scrollbar{
+    display:none;
+  }
+
+  header nav a{
+    flex:0 0 auto;
+    font-size:0.9rem;
   }
 }
