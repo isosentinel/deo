@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/service-worker.js')
         .then(reg => console.log('Service Worker Registered', reg))
-        .catch(err => console.log('Service Worker Failed', err));
+        .catch(err => console.error('Service Worker Failed', err));
     });
   }
 
@@ -19,42 +19,46 @@ document.addEventListener("DOMContentLoaded", () => {
   const installBtn = document.getElementById('installBtn');
   const installText = document.getElementById('installText');
 
-  // Detect iOS
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
   if (isIOS) {
     installText.innerText = 'To install ISO Sentinel on iOS: Tap Share (⬆) → Add to Home Screen';
-    installBtn.style.display = 'none';
-    installBanner.style.display = 'block';
+    if (installBtn) installBtn.style.display = 'none';
+    if (installBanner) installBanner.style.display = 'block';
   } else {
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      installBanner.style.display = 'block';
+      if (installBanner) installBanner.style.display = 'block';
     });
 
-    installBtn.addEventListener('click', async () => {
-      installBanner.style.display = 'none';
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        const choiceResult = await deferredPrompt.userChoice;
-        deferredPrompt = null;
-        console.log('User choice:', choiceResult.outcome);
-      }
-    });
+    if (installBtn) {
+      installBtn.addEventListener('click', async () => {
+        installBanner.style.display = 'none';
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const choiceResult = await deferredPrompt.userChoice;
+          deferredPrompt = null;
+          console.log('User choice:', choiceResult.outcome);
+        }
+      });
+    }
   }
 
   // =========================
   // PAGE TRANSITION
   // =========================
   const transition = document.getElementById("page-transition");
-  window.addEventListener("load", () => transition.classList.add("hide"));
+  window.addEventListener("load", () => {
+    if (transition) transition.classList.add("hide");
+  });
 
   // =========================
   // SINGLE PAGE NAVIGATION
   // =========================
   const pages = document.querySelectorAll(".page");
-  const navLinks = document.querySelectorAll("header nav a");
+  const navLinks = document.querySelectorAll("header nav a, .mobile-nav a");
+
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
       const target = link.dataset.section;
@@ -62,24 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
       window.scrollTo({top: 0, behavior: "smooth"});
     });
   });
-
-  // =========================
-  // MOBILE NAV BELOW HERO
-  // =========================
-  const mobileNavContainer = document.createElement("div");
-  mobileNavContainer.className = "mobile-nav";
-  const mobileNavLinks = ["home","about","profile","modules","platforms","videos","contact"];
-  mobileNavLinks.forEach(section => {
-    const a = document.createElement("a");
-    a.dataset.section = section;
-    a.innerText = section.charAt(0).toUpperCase() + section.slice(1);
-    a.addEventListener("click", () => {
-      pages.forEach(page => page.classList.toggle("active", page.id === section));
-      window.scrollTo({top:0, behavior:"smooth"});
-    });
-    mobileNavContainer.appendChild(a);
-  });
-  document.querySelector(".hero").appendChild(mobileNavContainer);
 
   // =========================
   // EXPLORER POPUP
@@ -148,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ]
   };
 
-  // =========================
+    // =========================
   // EXPLORER BUTTONS
   // =========================
   document.querySelectorAll(".explore-btn button").forEach(btn => {
@@ -161,7 +147,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document.querySelector(".close").addEventListener("click", () => explorer.style.display = "none");
+  document.querySelector(".close").addEventListener("click", () => {
+    explorer.style.display = "none";
+  });
 
   // =========================
   // RENDER EXPLORER ITEMS
@@ -172,9 +160,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const div = document.createElement("div");
       div.className = "exp-item";
       div.dataset.type = item.type;
-      if(item.type==="pdf") div.innerHTML = `<h4>${item.title}</h4><a href="${item.src}" target="_blank">View PDF</a>`;
-      if(item.type==="video") div.innerHTML = `<h4>${item.title}</h4><iframe src="${item.src}" allowfullscreen loading="lazy"></iframe>`;
-      if(item.type==="image") div.innerHTML = `<h4>${item.title}</h4><img src="${item.src}" alt="${item.title}">`;
+      if(item.type==="pdf") {
+        div.innerHTML = `<h4>${item.title}</h4><a href="${item.src}" target="_blank">View PDF</a>`;
+      }
+      if(item.type==="video") {
+        div.innerHTML = `<h4>${item.title}</h4><iframe src="${item.src}" allowfullscreen loading="lazy"></iframe>`;
+      }
+      if(item.type==="image") {
+        div.innerHTML = `<h4>${item.title}</h4><img src="${item.src}" alt="${item.title}">`;
+      }
       expBody.appendChild(div);
     });
     setupVideoPause();
@@ -213,7 +207,9 @@ document.addEventListener("DOMContentLoaded", () => {
     iframes.forEach(iframe => {
       iframe.addEventListener("mouseenter", () => {
         if(bgMusic && !bgMusic.paused) bgMusic.pause();
-        if(currentVideo && currentVideo !== iframe) currentVideo.src = currentVideo.src; // stop previous
+        if(currentVideo && currentVideo !== iframe) {
+          currentVideo.src = currentVideo.src; // stop previous
+        }
         currentVideo = iframe;
       });
     });

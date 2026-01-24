@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>ISO Sentinel | Cybersecurity & Information Security Platform</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ISO Sentinel is a Cybersecurity and Information Security Learning Platform for students and professionals.">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -17,11 +18,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="apple-touch-icon" sizes="72x72" href="icons/icon-192.png">
-<link rel="apple-touch-icon" sizes="114x114" href="icons/icon-192.png">
-<link rel="apple-touch-icon" sizes="144x144" href="icons/icon-192.png">
-<link rel="apple-touch-icon" sizes="152x152" href="icons/icon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
 </head>
 
 <body>
@@ -56,6 +54,17 @@
     <a data-section="contact">Contact</a>
   </nav>
 </header>
+
+<!-- MOBILE NAV GLOBAL -->
+<div class="mobile-nav">
+  <a data-section="home">Home</a>
+  <a data-section="about">About</a>
+  <a data-section="profile">Profile</a>
+  <a data-section="modules">Modules</a>
+  <a data-section="platforms">Platforms</a>
+  <a data-section="videos">Videos</a>
+  <a data-section="contact">Contact</a>
+</div>
 
 <!-- HOME PAGE -->
 <section id="home" class="page active">
@@ -139,9 +148,12 @@
   <p>Email: isosentinel@gmail.com</p>
   <p>Phone: +255 626 425 950</p>
   <form>
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea placeholder="Your Message"></textarea>
+    <label for="name">Your Name</label>
+    <input id="name" type="text" placeholder="Your Name">
+    <label for="email">Your Email</label>
+    <input id="email" type="email" placeholder="Your Email">
+    <label for="message">Your Message</label>
+    <textarea id="message" placeholder="Your Message"></textarea>
     <button>Send Message</button>
   </form>
 </section>
@@ -153,7 +165,7 @@
 </footer>
 
 <!-- POPUP EXPLORER -->
-<div id="explorer">
+<div id="explorer" role="dialog" aria-modal="true">
   <div class="explorer-box">
     <span class="close">✖</span>
     <h2 id="exp-title"></h2>
