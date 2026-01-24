@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
   if (isIOS) {
-    installText.innerText = 'To install ISO Sentinel on iOS: Tap Share (⬆) → Add to Home Screen';
+    if (installText) installText.innerText = 'To install ISO Sentinel on iOS: Tap Share (⬆) → Add to Home Screen';
     if (installBtn) installBtn.style.display = 'none';
     if (installBanner) installBanner.style.display = 'block';
   } else {
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // SINGLE PAGE NAVIGATION
   // =========================
   const pages = document.querySelectorAll(".page");
-  const navLinks = document.querySelectorAll("header nav a, .mobile-nav a");
+  const navLinks = document.querySelectorAll("header nav a");
 
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
