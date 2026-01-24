@@ -168,7 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="pdf-box">
             <iframe src="${item.src}" width="100%" height="500px"></iframe>
             <div class="pdf-actions">
-              <a href="${item.src}" target="_blank" class="btn">View Fullscreen</a>
               <a href="${item.src}" download class="btn">Download PDF</a>
             </div>
           </div>
