@@ -3,20 +3,20 @@
   "name": "ISO Sentinel",
   "short_name": "ISO Sentinel",
   "description": "Cybersecurity and Information Security Learning Platform",
-  "start_url": "/index.html",
-  "scope": "/",
+  "start_url": "/deo/index.html",
+  "scope": "/deo/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#020210",
   "theme_color": "#00fff7",
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "/deo/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "/deo/icon-192.png",
       "sizes": "512x512",
       "type": "image/png"
     }

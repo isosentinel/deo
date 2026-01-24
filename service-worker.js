@@ -1,18 +1,18 @@
 const CACHE_NAME = 'isosentinel-cache-v2';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/backmusic.mp3',
-  '/logo.png',
-  '/profile.jpg',
-  '/docs/cyber.pdf',
-  '/docs/encryption.pdf',
-  '/images/cyber.png',
-  '/manifest.json',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png'
+  '/deo/',
+  '/deo/index.html',
+  '/deo/style.css',
+  '/deo/script.js',
+  '/deo/backmusic.mp3',
+  '/deo/logo.png',
+  '/deo/profile.jpg',
+  '/deo/docs/cyber.pdf',
+  '/deo/docs/encryption.pdf',
+  '/deo/images/cyber.png',
+  '/deo/manifest.json',
+  '/deo/icons/icon-192.png',
+  '/deo/icons/icon-512.png'
 ];
 
 // INSTALL EVENT
@@ -48,7 +48,7 @@ self.addEventListener('fetch', event => {
     }).catch(err => {
       console.error('Fetch failed:', event.request.url, err);
       if(event.request.destination === 'document') {
-        return caches.match('/index.html');
+        return caches.match('/deo/index.html');
       }
     })
   );
