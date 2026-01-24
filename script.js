@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // SINGLE PAGE NAVIGATION
   // =========================
   const pages = document.querySelectorAll(".page");
-  const navLinks = document.querySelectorAll("header nav a");
+  const navLinks = document.querySelectorAll("nav.global-links a");
 
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ]
   };
 
-    // =========================
+  // =========================
   // EXPLORER BUTTONS
   // =========================
   document.querySelectorAll(".explore-btn button").forEach(btn => {
