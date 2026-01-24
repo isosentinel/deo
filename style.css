@@ -90,8 +90,8 @@ header .logo-box{
   gap:8px;
 }
 header .logo-box img{
-  width:60px;
-  height:60px;
+  width:100px;
+  height:100px;
   object-fit:contain;
 }
 header .logo-box h2{
