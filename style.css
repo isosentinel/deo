@@ -129,7 +129,7 @@ nav.global-links{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  gap:12px;
+  gap:2px;
   margin:20px 0;
 }
 nav.global-links a{
