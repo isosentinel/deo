@@ -47,7 +47,7 @@ section{
 
 /* MARQUEE */
 .marquee{
-  padding:6px 0; /* nafasi ndogo */
+  padding:6px 0;
   background:linear-gradient(90deg,#001f3f,#0077ff,#00fff7,#0077ff,#001f3f);
   background-size:400% 400%;
   animation:glowMarquee 12s ease infinite;
@@ -75,7 +75,7 @@ section{
 /* HEADER */
 header{
   position:relative;
-  margin-top:40px; /* nafasi chini ya marquee */
+  margin-top:40px;
   width:100%;
   background:rgba(2,2,20,0.85);
   backdrop-filter:blur(10px);
@@ -108,7 +108,7 @@ header .logo-box h2{
   justify-content:flex-start;
   align-items:center;
   text-align:center;
-  padding-top:40px; /* imepandishwa juu kidogo */
+  padding-top:40px;
 }
 .hero h1{
   font-size:3rem;
@@ -246,29 +246,12 @@ footer{
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  .hero{padding-top:30px;}
-  .hero h1{font-size:2.4rem;margin-top:10px;}
+  .marquee{padding:4px 0;}
+  .marquee marquee{font-size:0.8rem;}
   header .logo-box img{width:50px;height:50px;}
   header .logo-box h2{font-size:1.3rem;}
-  .grid{grid-template-columns:1fr;gap:25px;}
-  .card{padding:25px;}
-  .video-box iframe{height:200px;}
-  footer{padding:40px 15px;}
-}
-@media(max-width:480px){
-  .hero{padding-top:20px;}
-  .hero h1{font-size:2rem;}
-  .hero p{font-size:0.9rem;}
-  .profile img{width:150px;height:150px;}
-  .card{font-size:0.9rem;}
-  button{padding:10px 24px;font-size:0.9rem;}
-  .explorer-box{padding:20px;}
-/* RESPONSIVE */
-@media(max-width:768px){
   .hero{padding-top:30px;}
-  .hero h1{font-size:2.4rem;margin-top:10px;}
-  header .logo-box img{width:50px;height:50px;}
-  header .logo-box h2{font-size:1.3rem;}
+  .hero h1{font-size:2.2rem;}
   .grid{grid-template-columns:1fr;gap:25px;}
   .card{padding:25px;}
   .video-box iframe{height:200px;}
@@ -276,9 +259,14 @@ footer{
 }
 
 @media(max-width:480px){
+  .marquee{padding:3px 0;}
+  .marquee marquee{font-size:0.75rem;letter-spacing:1px;}
+  header{padding:10px 0;}
+  header .logo-box img{width:45px;height:45px;}
+  header .logo-box h2{font-size:1.1rem;}
   .hero{padding-top:20px;}
-  .hero h1{font-size:2rem;}
-  .hero p{font-size:0.9rem;}
+  .hero h1{font-size:1.8rem;}
+  .hero p{font-size:0.85rem;}
   .profile img{width:150px;height:150px;}
   .card{font-size:0.9rem;}
   button{padding:10px 24px;font-size:0.9rem;}
