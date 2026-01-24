@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap');
 
-/* RESET */
+/* =========================
+   RESET
+========================= */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
-/* THEME VARIABLES */
+/* =========================
+   THEME VARIABLES
+========================= */
 :root{
   --bg-image:url("background.png");
   --bg-main:#020210;
@@ -19,7 +23,9 @@
   --text-soft:#cfd8d8;
 }
 
-/* BODY */
+/* =========================
+   BODY
+========================= */
 body{
   font-family:Poppins,sans-serif;
   color:var(--text-main);
@@ -32,7 +38,9 @@ body{
   background-attachment:fixed;
 }
 
-/* TYPOGRAPHY */
+/* =========================
+   TYPOGRAPHY
+========================= */
 h1,h2,h3{
   font-family:Orbitron;
   color:var(--accent);
@@ -45,7 +53,9 @@ section{
   margin:auto;
 }
 
-/* MARQUEE */
+/* =========================
+   MARQUEE
+========================= */
 .marquee{
   padding:6px 0;
   background:linear-gradient(90deg,#001f3f,#0077ff,#00fff7,#0077ff,#001f3f);
@@ -72,7 +82,9 @@ section{
   text-shadow:0 0 8px #00fff7,0 0 16px #0077ff,0 0 30px #00e5ff;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 header{
   position:relative;
   margin-top:40px;
@@ -100,7 +112,9 @@ header .logo-box h2{
   margin:0;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero{
   min-height:calc(100vh - 120px);
   display:flex;
@@ -124,7 +138,9 @@ header .logo-box h2{
   margin-top:8px;
 }
 
-/* GLOBAL NAV LINKS */
+/* =========================
+   GLOBAL NAV LINKS
+========================= */
 nav.global-links{
   display:flex;
   justify-content:center;
@@ -146,7 +162,9 @@ nav.global-links a:hover{
   color:#fff;
 }
 
-/* GRID & CARDS */
+/* =========================
+   GRID & CARDS
+========================= */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -165,7 +183,9 @@ nav.global-links a:hover{
   box-shadow:0 0 60px rgba(0,255,247,0.35);
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 button{
   margin-top:22px;
   padding:12px 34px;
@@ -178,7 +198,9 @@ button{
 }
 button:hover{opacity:.85;}
 
-/* PROFILE */
+/* =========================
+   PROFILE
+========================= */
 .profile img{
   width:200px;
   height:200px;
@@ -187,7 +209,9 @@ button:hover{opacity:.85;}
   box-shadow:0 0 40px var(--accent);
 }
 
-/* VIDEOS */
+/* =========================
+   VIDEOS
+========================= */
 .video-box iframe{
   width:100%;
   height:280px;
@@ -195,7 +219,9 @@ button:hover{opacity:.85;}
   border:2px solid var(--accent-soft);
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 .contact input,
 .contact textarea{
   width:100%;
@@ -207,7 +233,9 @@ button:hover{opacity:.85;}
   color:#fff;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer{
   background:linear-gradient(180deg,#020210,#000);
   padding:80px 20px;
@@ -216,7 +244,9 @@ footer{
 }
 .italic{font-style:italic;color:var(--accent);}
 
-/* POPUP EXPLORER */
+/* =========================
+   POPUP EXPLORER
+========================= */
 #explorer{
   position:fixed;
   inset:0;
@@ -280,7 +310,9 @@ footer{
   color:#020210;
 }
 
-/* EXPLORER ITEMS GRID */
+/* =========================
+   EXPLORER ITEMS GRID
+========================= */
 #exp-body{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -303,7 +335,9 @@ footer{
   font-size:1.1rem;
 }
 
-/* PDF STYLING FOR VIEW ONLY */
+/* =========================
+   PDF / VIDEO / IMAGE STYLING
+========================= */
 .exp-item iframe{
   width:100%;
   height:500px;
@@ -312,15 +346,11 @@ footer{
   box-shadow:0 0 25px rgba(0,255,247,0.2);
   pointer-events: auto; /* allow scrolling */
 }
-
-/* Videos */
 .exp-item iframe[src*="youtube"]{
   height:280px;
   border-radius:14px;
   border:2px solid var(--accent-soft);
 }
-
-/* Images */
 .exp-item img{
   width:100%;
   height:auto;
@@ -328,7 +358,9 @@ footer{
   object-fit:cover;
 }
 
-/* PAGE SWITCHING */
+/* =========================
+   PAGE SWITCHING
+========================= */
 .page{
   display:none;
 }
@@ -336,7 +368,9 @@ footer{
   display:block;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 @media(max-width:768px){
   .explorer-box{padding:25px;}
   #search{padding:12px;}

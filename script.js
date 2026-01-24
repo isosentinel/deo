@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // =========================
-  // RENDER EXPLORER ITEMS (PDF VIEW ONLY UPDATED)
+  // RENDER EXPLORER ITEMS
   // =========================
   function renderItems(items) {
     expBody.innerHTML = "";
