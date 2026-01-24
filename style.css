@@ -87,7 +87,7 @@ header .logo-box{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:8px;
+  gap:0px;
 }
 header .logo-box img{
   width:100px;
