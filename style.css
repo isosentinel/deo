@@ -335,49 +335,28 @@ footer{
   font-size:1.1rem;
 }
 
-/* =========================
-   PDF / VIDEO / IMAGE STYLING
-========================= */
+/* PDFs */
 .exp-item iframe{
   width:100%;
-  height:500px;
+  height:400px;
   border-radius:14px;
-  border:1px solid var(--accent-soft);
+  border:none;
   box-shadow:0 0 25px rgba(0,255,247,0.2);
-  pointer-events: auto; /* allow scrolling */
 }
+
+/* Videos */
 .exp-item iframe[src*="youtube"]{
   height:280px;
   border-radius:14px;
   border:2px solid var(--accent-soft);
 }
+
+/* Images */
 .exp-item img{
   width:100%;
   height:auto;
   border-radius:14px;
   object-fit:cover;
-}
-
-/* =========================
-   PDF ACTIONS (Fullscreen & Download)
-========================= */
-.pdf-actions {
-  margin-top: 12px;
-  display: flex;
-  gap: 12px;
-}
-.pdf-actions .btn {
-  padding: 10px 18px;
-  border-radius: 20px;
-  background: linear-gradient(90deg, var(--accent), #0077ff);
-  color: #020210;
-  font-weight: 500;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.pdf-actions .btn:hover {
-  background:#00fff7;
-  color:#020210;
 }
 
 /* =========================
@@ -397,7 +376,7 @@ footer{
   .explorer-box{padding:25px;}
   #search{padding:12px;}
   .filters button{padding:8px 14px;font-size:0.85rem;}
-  .exp-item iframe{height:350px;}
+  .exp-item iframe{height:300px;}
   .exp-item h4{font-size:1rem;}
 }
 
@@ -405,6 +384,6 @@ footer{
   .explorer-box{padding:20px;}
   #search{padding:10px;font-size:0.85rem;}
   .filters button{padding:7px 12px;font-size:0.8rem;}
-  .exp-item iframe{height:300px;}
+  .exp-item iframe{height:250px;}
   .exp-item h4{font-size:0.95rem;}
 }

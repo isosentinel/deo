@@ -24,6 +24,12 @@
 
 <body>
 
+<!-- INSTALL BANNER -->
+<div id="installBanner" class="install-banner" style="display:none;">
+  <span id="installText">Install ISO Sentinel</span>
+  <button id="installBtn">Install</button>
+</div>
+
 <!-- MARQUEE -->
 <div class="marquee">
   <marquee>
@@ -43,8 +49,8 @@
 <section id="home" class="page active">
   <div class="hero">
     <div class="hero-music">
-      <audio id="bgMusic" controls preload="auto" autoplay loop>
-        <source src="Asante.mp3" type="audio/mpeg">
+      <audio id="bgMusic" controls preload="auto">
+        <source src="Lovelife.mp3" type="audio/mpeg">
       </audio>
     </div>
     <h1>ISO Sentinel</h1>
@@ -64,7 +70,6 @@
   </nav>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="page">
   <nav class="global-links">
     <a data-section="home">Home</a>
@@ -75,13 +80,12 @@
     <a data-section="contact">Contact</a>
   </nav>
   <h2>About Website</h2> 
-  <p>Welcome, my fellow students, to ISO Sentinel. This is not just my project, it is our collective learning resource...</p>
-  <p>ISO Sentinel is our digital classroom and a space designed for us to gain insight, strengthen our skills, and build a solid foundation in protecting information.</p> 
-  <p>This is a shared journey. Each of us is part of a new generation of guardians, ready to defend the digital world with knowledge and confidence.</p> 
-  <p class="italic">“ISO Sentinel: A common resource, for all students, to learn and protect the digital world.”</p> 
+  <p> Welcome, my fellow students, to ISO Sentinel. This is not just my project,it is our collective learning resource. I built it with the spirit of solidarity, so that each of us can explore, understand, and enjoy the world of information security, data protection, and cyber security. </p>
+  <p> We all know that the learning journey can sometimes feel challenging. But here, we share knowledge, support one another, and grow together. ISO Sentinel is our digital classroom and a space designed for us to gain insight, strengthen our skills, and build a solid foundation in protecting information. </p> 
+  <p> This is a shared journey. Each of us is part of a new generation of guardians, ready to defend the digital world with knowledge and confidence. </p> 
+  <p class="italic"> “ISO Sentinel: A common resource, for all students, to learn and protect the digital world.” </p> 
 </section>
 
-<!-- PROFILE -->
 <section id="profile" class="profile page">
   <nav class="global-links">
     <a data-section="home">Home</a>
@@ -105,11 +109,10 @@
   </ul>
 
   <p class="italic">
-    "Protect what matters, understand the system, and think like an attacker to defend effectively."
+    "Protect what matters, understand the system, and think like an attacker to defend effectively. Our focus is on the security of data and information"
   </p>
 </section>
 
-<!-- MODULES -->
 <section id="modules" class="page">
   <nav class="global-links">
     <a data-section="home">Home</a>
@@ -130,7 +133,6 @@
   </div>
 </section>
 
-<!-- PLATFORMS -->
 <section id="platforms" class="page">
   <nav class="global-links">
     <a data-section="home">Home</a>
@@ -155,7 +157,6 @@
   </div>
 </section>
 
-<!-- VIDEOS -->
 <section id="videos" class="page">
   <nav class="global-links">
     <a data-section="home">Home</a>
@@ -171,7 +172,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact page">
   <nav class="global-links">
     <a data-section="home">Home</a>
@@ -186,16 +186,15 @@
   <p>Phone: +255 626 425 950</p>
   <form>
     <label for="name">Your Name</label>
-    <input id="name" type="text" placeholder="Your Name" required>
+    <input id="name" type="text" placeholder="Your Name">
     <label for="email">Your Email</label>
-    <input id="email" type="email" placeholder="Your Email" required>
+    <input id="email" type="email" placeholder="Your Email">
     <label for="message">Your Message</label>
-    <textarea id="message" placeholder="Your Message" rows="5"></textarea>
-    <button type="submit">Send Message</button>
+    <textarea id="message" placeholder="Your Message"></textarea>
+    <button>Send Message</button>
   </form>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2026 ISO Sentinel</p>
   <p>Designed by Deogratius John Malingula</p>
@@ -209,19 +208,15 @@
     <h2 id="exp-title"></h2>
     <input type="text" id="search" placeholder="Search content...">
     <div class="filters">
-      <button data-filter="all" class="active">All</button>
+      <button data-filter="all">All</button>
       <button data-filter="pdf">PDF</button>
       <button data-filter="video">Video</button>
       <button data-filter="image">Image</button>
     </div>
-    <div id="exp-body">
-      <!-- Explorer items (PDFs, Videos, Images) will be rendered here via script.js -->
-      <!-- PDFs will show in iframe with options: View Fullscreen & Download -->
-    </div>
+    <div id="exp-body"></div>
   </div>
 </div>
 
-<!-- PAGE TRANSITION -->
 <div id="page-transition">LOADING...</div>
 
 <!-- JS -->

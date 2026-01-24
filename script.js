@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { type: "video", title: "Cyber intelligence threat 2", src: "https://www.youtube.com/embed/V7hcnIQwdiE" },
       { type: "video", title: "Cyber threat intelligence 3", src: "https://www.youtube.com/embed/V-ByZhGV3es" }
     ],
-       "Database Systems": [
+    "Database Systems": [
       { type: "video", title: "Introduction to database management system (DBMS)", src: "https://www.youtube.com/embed/6Iu45VZGQDk" },
       { type: "video", title: "DBMS Characteristics", src: "https://www.youtube.com/embed/wClEbCyWryI" },
       { type: "video", title: "SQL course part 1", src: "https://www.youtube.com/embed/7S_tz1z_5bA" },
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // =========================
-  // RENDER EXPLORER ITEMS
+  // RENDER EXPLORER ITEMS (FULL)
   // =========================
   function renderItems(items) {
     expBody.innerHTML = "";
@@ -165,12 +165,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (item.type === "pdf") {
         div.innerHTML = `
           <h4>${item.title}</h4>
-          <div class="pdf-box">
-            <iframe src="${item.src}" width="100%" height="500px"></iframe>
-            <div class="pdf-actions">
-              <a href="${item.src}" download class="btn">Download PDF</a>
-            </div>
-          </div>
+          <iframe 
+            src="${item.src}#toolbar=0&navpanes=0&scrollbar=0" 
+            width="100%" 
+            height="500px" 
+            style="border:1px solid #ccc"
+          ></iframe>
         `;
       }
 
