@@ -359,6 +359,28 @@ footer{
 }
 
 /* =========================
+   PDF ACTIONS (Fullscreen & Download)
+========================= */
+.pdf-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+.pdf-actions .btn {
+  padding: 10px 18px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, var(--accent), #0077ff);
+  color: #020210;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.pdf-actions .btn:hover {
+  background:#00fff7;
+  color:#020210;
+}
+
+/* =========================
    PAGE SWITCHING
 ========================= */
 .page{

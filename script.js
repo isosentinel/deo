@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { type: "video", title: "Cyber intelligence threat 2", src: "https://www.youtube.com/embed/V7hcnIQwdiE" },
       { type: "video", title: "Cyber threat intelligence 3", src: "https://www.youtube.com/embed/V-ByZhGV3es" }
     ],
-    "Database Systems": [
+       "Database Systems": [
       { type: "video", title: "Introduction to database management system (DBMS)", src: "https://www.youtube.com/embed/6Iu45VZGQDk" },
       { type: "video", title: "DBMS Characteristics", src: "https://www.youtube.com/embed/wClEbCyWryI" },
       { type: "video", title: "SQL course part 1", src: "https://www.youtube.com/embed/7S_tz1z_5bA" },
@@ -165,12 +165,14 @@ document.addEventListener("DOMContentLoaded", () => {
       if (item.type === "pdf") {
         div.innerHTML = `
           <h4>${item.title}</h4>
-          <button class="view-pdf-btn">View PDF</button>
+          <div class="pdf-box">
+            <iframe src="${item.src}" width="100%" height="500px"></iframe>
+            <div class="pdf-actions">
+              <a href="${item.src}" target="_blank" class="btn">View Fullscreen</a>
+              <a href="${item.src}" download class="btn">Download PDF</a>
+            </div>
+          </div>
         `;
-        const viewBtn = div.querySelector(".view-pdf-btn");
-        viewBtn.addEventListener("click", () => {
-          window.open(`${item.src}#toolbar=0&navpanes=0&scrollbar=0`, '_blank');
-        });
       }
 
       if (item.type === "video") {
