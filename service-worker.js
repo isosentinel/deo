@@ -8,7 +8,7 @@ const urlsToCache = [
   '/deo/logo.png',
   '/deo/profile.jpg',
   '/deo/docs/cyber.pdf',
-  '/deo/docs/encryption.pdf',
+  '/deo/docs/Introduction-DBMS.pdf',
   '/deo/images/cyber.png',
   '/deo/manifest.json',
   '/deo/icons/icon-192.png',
