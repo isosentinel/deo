@@ -85,6 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
       { type: "pdf", title: "Encryption Guide", src: "docs/encryption.pdf" },
       { type: "video", title: "Encryption Explained", src: "https://www.youtube.com/embed/jhXCTbFnK8o" }
     ],
+    "Steganography": [
+  
+      { type: "video", title: "Steganography With python 1", src: "https://www.youtube.com/embed/Ngrtqq9AmaE?si=vh9Dc66Uc_31LbzC" },
+    ],
     "Discrete Mathematics": [
       { type: "video", title: "Boolean Algebra Intro 1", src: "https://www.youtube.com/embed/WW-NPtIzHwk" },
       { type: "video", title: "Boolean Algebra Intro 2", src: "https://www.youtube.com/embed/OjWmVCG8PLA" },
